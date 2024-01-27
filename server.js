@@ -39,7 +39,18 @@ app.post("/api/notes", (req, res) => {
 })
 
 app.delete("/api/notes/:id", (req, res) => {
+  const noteId = req.params.id;
+  const notes = showNotes();
+  const updateNotes = [];
 
+  for (const note of notes) {
+      if (note.id !== noteId) {
+          updateNotes.push(note);
+      }
+  }
+
+  saveNote(updateNotes);
+  res.json(updateNotes);
 })
 
 app.listen(PORT, () => {
