@@ -7,7 +7,7 @@ const fs = require('fs'); // File system module for interacting with the file sy
 const uuid = require('uuid'); // Module for generating unique identifiers (UUIDs)
 
 // Middleware setup
-app.use(express.static('develop/public')); // Serve static files from 'develop/public' directory
+app.use(express.static('Develop/public')); // Serve static files from 'develop/public' directory
 app.use(express.json()); // Parse incoming JSON requests
 app.use(express.urlencoded({ extended: true })); // Parse incoming URL-encoded data with extended option
 
